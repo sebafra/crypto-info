@@ -1,0 +1,8 @@
+{
+  "name": "Crypto Info",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "ee40c81e"
+}
