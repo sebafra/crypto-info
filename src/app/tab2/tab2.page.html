@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Markets
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,23 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Markets</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-avatar slot="start">
+        <img [src]="item.image" />
+      </ion-avatar>
+      <ion-label>
+        <div>{{item.symbol}}</div>
+        <div class="subtitle">{{item.id}}</div>
+      </ion-label>
+      <ion-note slot="end" class="ion-text-right">
+        <div class="current_price">{{item.current_price}}</div>
+        <div>{{item.price_change_percentage_24h | number : '1.0-2'}}%</div>
+      </ion-note>
+    </ion-item>
+  </ion-list>
 </ion-content>

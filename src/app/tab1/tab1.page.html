@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Bitcoin
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,86 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Crypto Index</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/512px-Bitcoin.svg.png" alt="">
+    </div>
+    <ion-card-header>
+      <ion-card-subtitle>{{info.time?.updated | date: 'yyyy/MM/dd HH:mm'}}</ion-card-subtitle>
+      <ion-card-title>{{info.chartName}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{info.disclaimer}}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{info.bpi?.EUR.description}}</ion-card-title>
+    </ion-card-header>
+    <ion-item class="ion-activated">
+      <ion-label>Code</ion-label>
+      <ion-note slot="end">{{info.bpi?.EUR.code}}</ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Symbol</ion-label>
+      <ion-note slot="end" [innerHtml]="info.bpi?.EUR.symbol"></ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Rate</ion-label>
+      <ion-note slot="end">{{info.bpi?.EUR.rate}}</ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Rate Float</ion-label>
+      <ion-note slot="end">{{info.bpi?.EUR.rate_float}}</ion-note>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{info.bpi?.GBP.description}}</ion-card-title>
+    </ion-card-header>
+    <ion-item class="ion-activated">
+      <ion-label>Code</ion-label>
+      <ion-note slot="end">{{info.bpi?.GBP.code}}</ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Symbol</ion-label>
+      <ion-note slot="end" [innerHtml]="info.bpi?.GBP.symbol"></ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Rate</ion-label>
+      <ion-note slot="end">{{info.bpi?.GBP.rate}}</ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Rate Float</ion-label>
+      <ion-note slot="end">{{info.bpi?.GBP.rate_float}}</ion-note>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{info.bpi?.USD.description}}</ion-card-title>
+    </ion-card-header>
+    <ion-item class="ion-activated">
+      <ion-label>Code</ion-label>
+      <ion-note slot="end">{{info.bpi?.USD.code}}</ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Symbol</ion-label>
+      <ion-note slot="end" [innerHtml]="info.bpi?.USD.symbol"></ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Rate</ion-label>
+      <ion-note slot="end">{{info.bpi?.USD.rate}}</ion-note>
+    </ion-item>
+    <ion-item class="ion-activated">
+      <ion-label>Rate Float</ion-label>
+      <ion-note slot="end">{{info.bpi?.USD.rate_float}}</ion-note>
+    </ion-item>
+  </ion-card>
+
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
